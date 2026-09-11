@@ -34,9 +34,9 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_GOOGLE_APP_SCRIPT_URL: ${{ secrets.VITE_GOOGLE_APP_SCRIPT_URL }}
-          VITE_PASS_THRESHOLD: ${{ secrets.VITE_PASS_THRESHOLD || 3 }}
-          VITE_QUESTION_COUNT: ${{ secrets.VITE_QUESTION_COUNT || 5 }}
+          VITE_GOOGLE_APP_SCRIPT_URL: ${{ secrets.VITE_GOOGLE_APP_SCRIPT_URL || vars.VITE_GOOGLE_APP_SCRIPT_URL }}
+          VITE_PASS_THRESHOLD: ${{ secrets.VITE_PASS_THRESHOLD || vars.VITE_PASS_THRESHOLD || 3 }}
+          VITE_QUESTION_COUNT: ${{ secrets.VITE_QUESTION_COUNT || vars.VITE_QUESTION_COUNT || 5 }}
           
       - name: Setup Pages
         uses: actions/configure-pages@v4
